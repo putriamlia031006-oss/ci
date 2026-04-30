@@ -7,11 +7,11 @@ class auth_model extends CI_model{
     {
         return $this->db->get_where('users',[
             'username'=>$username,
-            'password'=>md5(password)
+            'password'=>md5($password)
         ])->row();
     }
 
-    public function upadate_last_login($id)
+    public function update_last_login($id)
     {
         $this->db->where('id', $id);
         $this->db->update('users',[

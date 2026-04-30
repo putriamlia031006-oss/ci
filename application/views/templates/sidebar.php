@@ -11,7 +11,7 @@
      
     <li class="nav-item active">
         <a class="nav-link" href="<?= site_url('dashboard'); ?>">
-            <i class="fas fa-fw fa-tachmometer-alt"></i>
+            <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>dashboard</span>
         </a>
     </li>
