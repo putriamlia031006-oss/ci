@@ -20,7 +20,7 @@
 
     <li class="nav-item">
         <a class="nav-link" href="<?= site_url('kategori'); ?>">
-            <i class="fas fa-book"></i>
+            <i class="fas fa-tags"></i>
             <span>kategori</span>
         </a>
     </li>
@@ -29,8 +29,24 @@
 
     <li class="nav-item">
         <a class="nav-link" href="<?= site_url('anggota'); ?>">
-            <i class="fas fa-book"></i>
+            <i class="fas fa-users"></i>
             <span>anggota</span>
+        </a>
+    </li>
+
+    <hr class="sidebar-divider my-0">
+
+    <li class="nav-item">
+        <a class="nav-link" href="<?= site_url('buku'); ?>">
+            <i class="fas fa-book"></i>
+            <span>Buku</span>
+        </a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link" href="<?= site_url('peminjaman'); ?>">
+            <i class="fas fa-book"></i>
+            <span>peminjaman</span>
         </a>
     </li>
 
