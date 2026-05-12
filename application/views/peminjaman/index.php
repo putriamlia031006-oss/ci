@@ -9,7 +9,8 @@
             <div class="table-responsive">
 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
 <thead class="thead-dark">
-    <tr>
+    
+<tr>
         <th>No</th>
         <th>Kode peminjaman</th>
         <th>Nama</th>
@@ -23,7 +24,7 @@
     <tr>
         <td><?= $no++; ?></td>
         <td><?= $d->kode_peminjaman; ?></td>
-        <td><?= $d->nama; ?></td>
+        <td><?= $d->Nama; ?></td>
         <td><?= $d->tanggal_pinjam; ?></td>
         <td><?= $d->status; ?></td>
         <td>

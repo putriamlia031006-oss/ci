@@ -52,6 +52,13 @@
 
     <hr class="sidebar-divider d-none d-md-block">
 
+    <li class="nav-item">
+        <a class="nav-link" href="<?= site_url('laporan/peminjaman'); ?>">
+            <i class="fas fa-book"></i>
+            <span>Laporan Peminjaman</span>
+        </a>
+    </li>
+
 </ul>
 <div id="content-wrapper" class="d-flex flex-column">
     <div id="content">
