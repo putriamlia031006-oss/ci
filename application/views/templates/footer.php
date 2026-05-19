@@ -27,17 +27,19 @@
 <script>
     var ctx= document.getElementById("chartDashboard");
     var chart= new Chart(ctx,{
-        type:'polarArea',
+        type:'doughnut',
         data:{
-            labels:['kategori', 'Anggota'],
+            labels:['kategori', 'Anggota', 'buku'],
             datasets:[{
             label:'Jumlah Data',
             data:[
                 <?= $total_kategori; ?>,
-                <?= $total_anggota; ?>
+                <?= $total_anggota; ?>,
+                <?= $total_buku; ?>
             ],
             backgroundColor:[
                 '#071192',
+                '#06b92d',
                 '#8b0606'
             ]
         }]

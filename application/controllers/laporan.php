@@ -32,4 +32,50 @@ class laporan extends CI_Controller{
         $this->load->view('laporan/peminjaman', $data);
         $this->load->view('templates/footer');
     }
+
+    public function anggota()
+    {
+        $bulan = $this->input->get('bulan');
+
+        $this->db->select('*');
+        $this->db->from('anggota');
+
+        // Filter berdasarkan bulan daftar
+        if($bulan){
+            $this->db->where('DATE_FORMAT(tanggal_daftar, "%Y-%m") =', $bulan);
+        }
+
+        $data['data']  = $this->db->get()->result();
+        $data['bulan'] = $bulan;
+
+        $this->load->view('templates/header');
+        $this->load->view('templates/sidebar');
+        $this->load->view('templates/topbar');
+        $this->load->view('laporan/anggota', $data);
+        $this->load->view('templates/footer');
+    }
+
+    public function buku()
+    {
+        if($this->input->get('kategori')){
+        $this->db->where('buku.id_kategori', $this->input->get('kategori'));
+}
+
+        $this->db->select('buku.*, kategori.id');
+        $this->db->from('buku');
+        $this->db->join('kategori', 'kategori.id = buku.id_kategori');
+
+        if($bulan){
+            $this->db->where('DATE_FORMAT(tanggal_input, "%Y-%m") =', $bulan);
+        }
+
+        $data['data']  = $this->db->get()->result();
+        $data['bulan'] = $bulan;
+
+        $this->load->view('templates/header');
+        $this->load->view('templates/sidebar');
+        $this->load->view('templates/topbar');
+        $this->load->view('laporan/buku', $data);
+        $this->load->view('templates/footer');
+    }
 }

@@ -113,4 +113,22 @@ class Buku extends CI_Controller {
             redirect('buku');
         }
     }
+
+    public function cetak_buku()
+    {
+        $bulan = $this->input->get('bulan');
+
+        $this->db->select('buku.*, kategori.nama_kategori');
+        $this->db->from('buku');
+        $this->db->join('kategori', 'kategori.id = buku.id_kategori');
+
+        if($bulan){
+            $this->db->where('DATE_FORMAT(tanggal_input, "%Y-%m") =', $bulan);
+        }
+
+        $data['data']  = $this->db->get()->result();
+        $data['bulan'] = $bulan;
+
+        $this->load->view('laporan/cetak_buku', $data);
+    }
 }
